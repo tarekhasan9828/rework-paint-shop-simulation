@@ -1,0 +1,28 @@
+-- ============================================================
+-- DispatchRework  --  random-access dispatcher for Rework_Store
+-- ============================================================
+-- Parts placed in a Store never move on by themselves; a method pulls any
+-- part out at any time. That is the "random access" behaviour required by
+-- the task: the store is NOT a FIFO queue.
+--
+-- Deliberately NO connectors from Rework_Store to Bu_6/Bu_7/Bu_8 --
+-- leaving them out makes it impossible for a part to escape the wrong way.
+--
+-- Hook up as Entrance control (Controls > Entrance, "front" unticked) on:
+--   Rework_Store   (a new part arrived)
+--   SR, MR, ReRun  (a station took a part, so its cap-1 buffer is free)
+--
+-- The loop runs backwards because moving a part out of the store shifts
+-- the indices of every part behind it.
+-- ============================================================
+
+for var i := Rework_Store.numMU downto 1
+	var part: object := Rework_Store.MU(i)
+	if part.QualityState = "SR" and Bu_6.empty
+		part.move(Bu_6)
+	elseif part.QualityState = "MR" and Bu_7.empty
+		part.move(Bu_7)
+	elseif part.QualityState = "ReRun" and Bu_8.empty
+		part.move(Bu_8)
+	end
+next

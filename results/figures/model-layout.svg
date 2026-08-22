@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5b6472"/>
+    </marker>
+    <marker id="ad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b3762a"/>
+    </marker>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a94442"/>
+    </marker>
+    <style>
+      .b   { rx:6; ry:6; stroke-width:1.4 }
+      .src { fill:#dcefe0; stroke:#4c8c5a }
+      .buf { fill:#eef0f3; stroke:#98a2b3 }
+      .stn { fill:#dde7f6; stroke:#3f6fb5 }
+      .par { fill:#cfdcf1; stroke:#3f6fb5 }
+      .rwk { fill:#f7dedd; stroke:#a94442 }
+      .sto { fill:#fbeacd; stroke:#b3762a }
+      .drn { fill:#d9e4ef; stroke:#33506e }
+      .n   { font-size:12.5px; font-weight:700; fill:#1c2430; text-anchor:middle }
+      .s   { font-size:10px; fill:#5b6472; text-anchor:middle }
+      .sl  { font-size:10px; fill:#5b6472 }
+      .l   { font-size:10.5px; fill:#5b6472; font-style:italic }
+      .ll  { font-size:10.5px; fill:#a94442; font-style:italic }
+      .ld  { font-size:10.5px; fill:#b3762a; font-style:italic }
+      .h   { font-size:13px; font-weight:700; fill:#1c2430 }
+      .e   { stroke:#5b6472; stroke-width:1.5; fill:none; marker-end:url(#a) }
+      .er  { stroke:#a94442; stroke-width:1.5; fill:none; marker-end:url(#ar) }
+      .ed  { stroke:#b3762a; stroke-width:1.5; fill:none; stroke-dasharray:5 4; marker-end:url(#ad) }
+    </style>
+  </defs>
+
+  <rect width="1200" height="600" fill="#ffffff"/>
+
+  <text x="30" y="28" class="h">Rework Paint Shop — Plant Simulation model layout (23 objects, final Prio 3 configuration)</text>
+
+  <!-- ============ MAIN LINE ============ -->
+  <rect x="30"   y="60" width="84" height="42" class="b src"/>
+  <text x="72"   y="79" class="n">Order</text><text x="72" y="93" class="s">Source · 15/60/25</text>
+
+  <rect x="126"  y="60" width="84" height="42" class="b buf"/>
+  <text x="168"  y="79" class="n">Bu_1</text><text x="168" y="93" class="s">cap 1 · 10 s</text>
+
+  <rect x="222"  y="60" width="84" height="42" class="b buf"/>
+  <text x="264"  y="79" class="n">Bu_2</text><text x="264" y="93" class="s">cap 1 · 10 s</text>
+
+  <rect x="318"  y="60" width="84" height="42" class="b stn"/>
+  <text x="360"  y="79" class="n">TC_Entry</text><text x="360" y="93" class="s">62 s · 98.5 %</text>
+
+  <rect x="414"  y="60" width="84" height="42" class="b par"/>
+  <text x="456"  y="79" class="n">TC_Line</text><text x="456" y="93" class="s">8 × 62.5 = 500 s</text>
+
+  <rect x="510"  y="60" width="84" height="42" class="b par"/>
+  <text x="552"  y="79" class="n">TC_Oven</text><text x="552" y="93" class="s">10 × 62.5 = 625 s</text>
+
+  <rect x="606"  y="60" width="84" height="42" class="b buf"/>
+  <text x="648"  y="79" class="n">Bu_3</text><text x="648" y="93" class="s">cap 5 · 10 s</text>
+
+  <rect x="702"  y="60" width="84" height="42" class="b stn"/>
+  <text x="744"  y="79" class="n">Q_Station</text><text x="744" y="93" class="s">62.5 s · 99 %</text>
+
+  <rect x="798"  y="60" width="84" height="42" class="b buf"/>
+  <text x="840"  y="79" class="n">Bu_4</text><text x="840" y="93" class="s">cap 1 · 10 s</text>
+
+  <rect x="894"  y="60" width="84" height="42" class="b buf"/>
+  <text x="936"  y="79" class="n">Bu_5</text><text x="936" y="93" class="s">cap 8 · 10 s</text>
+
+  <rect x="990"  y="60" width="84" height="42" class="b stn"/>
+  <text x="1032" y="79" class="n">CC_HRK</text><text x="1032" y="93" class="s">62.5 s · 98 %</text>
+
+  <rect x="1086" y="60" width="84" height="42" class="b drn"/>
+  <text x="1128" y="79" class="n">Ship</text><text x="1128" y="93" class="s">Drain · KPI</text>
+
+  <!-- main line arrows -->
+  <path class="e" d="M114,81 H124"/>
+  <path class="e" d="M210,81 H220"/>
+  <path class="e" d="M306,81 H316"/>
+  <path class="e" d="M402,81 H412"/>
+  <path class="e" d="M498,81 H508"/>
+  <path class="e" d="M594,81 H604"/>
+  <path class="e" d="M690,81 H700"/>
+  <path class="e" d="M786,81 H796"/>
+  <path class="e" d="M882,81 H892"/>
+  <path class="e" d="M978,81 H988"/>
+  <path class="e" d="M1074,81 H1084"/>
+  <text x="792" y="50" class="l">OK (exit control)</text>
+
+  <!-- ============ REWORK STORE ============ -->
+  <rect x="654" y="176" width="180" height="48" class="b sto"/>
+  <text x="744" y="197" class="n">Rework_Store</text>
+  <text x="744" y="212" class="s">Store 10 × 5 · random access</text>
+
+  <path class="er" d="M744,102 V174"/>
+  <text x="752" y="145" class="ll">NOK → SR / MR / ReRun</text>
+
+  <!-- dispatcher dashed feed -->
+  <path class="ed" d="M654,200 H470 V428"/>
+  <path class="ed" d="M470,288 H518"/>
+  <path class="ed" d="M470,358 H518"/>
+  <path class="ed" d="M470,428 H518"/>
+  <text x="300" y="250" class="ld">DispatchRework pulls any matching part</text>
+  <text x="300" y="264" class="ld">(no connectors — method-driven)</text>
+
+  <!-- ============ REWORK LANES ============ -->
+  <!-- SR -->
+  <rect x="520" y="268" width="84" height="40" class="b buf"/>
+  <text x="562" y="286" class="n">Bu_6</text><text x="562" y="299" class="s">cap 1</text>
+  <rect x="640" y="268" width="84" height="40" class="b rwk"/>
+  <text x="682" y="286" class="n">SR</text><text x="682" y="299" class="s">750 s · 99.9 %</text>
+  <rect x="760" y="268" width="84" height="40" class="b buf"/>
+  <text x="802" y="286" class="n">Bu_9</text><text x="802" y="299" class="s">cap 1</text>
+  <path class="e" d="M604,288 H638"/>
+  <path class="e" d="M724,288 H758"/>
+
+  <!-- MR -->
+  <rect x="520" y="338" width="84" height="40" class="b buf"/>
+  <text x="562" y="356" class="n">Bu_7</text><text x="562" y="369" class="s">cap 1</text>
+  <rect x="640" y="338" width="84" height="40" class="b rwk"/>
+  <text x="682" y="356" class="n">MR</text><text x="682" y="369" class="s">1 400 s · 99.9 %</text>
+  <rect x="760" y="338" width="84" height="40" class="b buf"/>
+  <text x="802" y="356" class="n">Bu_10</text><text x="802" y="369" class="s">cap 1</text>
+  <path class="e" d="M604,358 H638"/>
+  <path class="e" d="M724,358 H758"/>
+  <text x="640" y="332" class="ll">◄ primary bottleneck (43.82 % working time)</text>
+
+  <!-- ReRun -->
+  <rect x="520" y="408" width="84" height="40" class="b buf"/>
+  <text x="562" y="426" class="n">Bu_8</text><text x="562" y="439" class="s">cap 1</text>
+  <rect x="640" y="408" width="84" height="40" class="b rwk"/>
+  <text x="682" y="426" class="n">ReRun</text><text x="682" y="439" class="s">1 740 s · 99.9 %</text>
+  <rect x="760" y="408" width="84" height="40" class="b buf"/>
+  <text x="802" y="426" class="n">Bu_11</text><text x="802" y="439" class="s">cap 1</text>
+  <path class="e" d="M604,428 H638"/>
+  <path class="e" d="M724,428 H758"/>
+
+  <!-- merge back into Bu_5 -->
+  <path class="e" d="M844,288 H912 V104"/>
+  <path class="e" d="M844,358 H952 V104"/>
+  <text x="860" y="278" class="l">repaired → Bu_5</text>
+
+  <!-- ReRun loop back to Bu_2 -->
+  <rect x="222" y="478" width="84" height="40" class="b buf"/>
+  <text x="264" y="496" class="n">Bu_12</text><text x="264" y="509" class="s">cap 1 · 10 s</text>
+  <path class="e" d="M802,448 V552 H264 V520"/>
+  <path class="e" d="M264,478 V104"/>
+  <text x="278" y="300" class="l">ReRun loop:</text>
+  <text x="278" y="314" class="l">re-enters the</text>
+  <text x="278" y="328" class="l">topcoat line</text>
+
+  <!-- ============ LOGIC / CONTROLS ============ -->
+  <rect x="30" y="176" width="180" height="48" class="b sto" fill="#f3eefb" stroke="#7a5ea8"/>
+  <text x="120" y="197" class="n">QualityCheck</text>
+  <text x="120" y="212" class="s">Q_Station · Exit control</text>
+
+  <rect x="30" y="240" width="180" height="48" class="b sto" fill="#f3eefb" stroke="#7a5ea8"/>
+  <text x="120" y="261" class="n">DispatchRework</text>
+  <text x="120" y="276" class="s">Entrance: Store, SR, MR, ReRun</text>
+
+  <rect x="30" y="304" width="180" height="48" class="b buf"/>
+  <text x="120" y="325" class="n">ShiftCalendar</text>
+  <text x="120" y="340" class="s">2 × 8 h, Mo–Fr · 14.5 h/day</text>
+
+  <text x="30" y="380" class="sl">Shifts apply to TC_Entry, Q_Station,</text>
+  <text x="30" y="394" class="sl">CC_HRK, SR, MR, ReRun — not to</text>
+  <text x="30" y="408" class="sl">TC_Line / TC_Oven (continuous).</text>
+
+  <!-- legend -->
+  <g transform="translate(900,470)">
+    <rect x="0" y="0" width="270" height="100" rx="6" fill="#fafbfc" stroke="#dfe3e8"/>
+    <rect x="12" y="14" width="18" height="12" rx="3" class="stn"/><text x="38" y="24" class="sl">Station / ParallelStation</text>
+    <rect x="12" y="34" width="18" height="12" rx="3" class="buf"/><text x="38" y="44" class="sl">Buffer (FIFO queue, 10 s)</text>
+    <rect x="12" y="54" width="18" height="12" rx="3" class="rwk"/><text x="38" y="64" class="sl">Rework station</text>
+    <rect x="12" y="74" width="18" height="12" rx="3" class="sto"/><text x="38" y="84" class="sl">Store (random access)</text>
+  </g>
+</svg>

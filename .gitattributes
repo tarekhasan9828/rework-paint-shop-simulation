@@ -1,0 +1,12 @@
+# Plant Simulation models are OLE compound binaries - never try to diff or merge them
+*.spp   binary
+*.obj   binary
+
+# Office documents are binary
+*.docx  binary
+*.pptx  binary
+*.xlsx  binary
+*.pdf   binary
+
+# Generated report - keep it out of the language statistics
+results/experiment-manager-report.html linguist-generated=true

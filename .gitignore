@@ -1,0 +1,19 @@
+# Plant Simulation working files
+*.spp.bak
+~$*
+*.tmp
+AutoSave*
+
+# Office lock / temp files
+~$*.docx
+~$*.pptx
+~$*.xlsx
+
+# macOS
+.DS_Store
+.AppleDouble
+._*
+
+# Windows
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,54 @@
+-- ============================================================
+-- QualityCheck  --  Exit control of Q_Station
+-- ============================================================
+-- Decides the quality state per part colour and routes the part.
+-- Plant Simulation's built-in "Percentage" exit strategy cannot express
+-- different probabilities per colour, so the routing is done here.
+--
+-- Hook up:  Q_Station > Controls > Exit > QualityCheck
+-- @ is the part currently on the Q_Station.
+--
+-- Probabilities (from 20260511_Parameter_ExamTask_G5.xlsx):
+--   colour |  SR  |  MR  | ReRun |  OK
+--   red    |  7 % |  2 % |   1 % | 90 %
+--   white  |  9 % |  6 % |   5 % | 80 %
+--   black  |  8 % |  3 % |   2 % | 87 %
+-- ============================================================
+
+var pSR, pMR, pRR: real
+
+if @.name = "Part_red"
+	pSR := 0.07
+	pMR := 0.02
+	pRR := 0.01
+elseif @.name = "Part_white"
+	pSR := 0.09
+	pMR := 0.06
+	pRR := 0.05
+else -- Part_black
+	pSR := 0.08
+	pMR := 0.03
+	pRR := 0.02
+end
+
+var r: real := z_uniform(1, 0, 1)
+
+if r < pSR
+	@.QualityState := "SR"
+elseif r < pSR + pMR
+	@.QualityState := "MR"
+elseif r < pSR + pMR + pRR
+	@.QualityState := "ReRun"
+else
+	@.QualityState := "OK"
+end
+
+-- waituntil ... prio 1 keeps the part on the station while the target is
+-- full and releases it the moment space frees up (realistic blocking).
+if @.QualityState = "OK"
+	waituntil not Bu_4.full prio 1
+	@.move(Bu_4)
+else
+	waituntil not Rework_Store.full prio 1
+	@.move(Rework_Store)
+end
