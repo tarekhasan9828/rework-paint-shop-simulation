@@ -8,7 +8,7 @@ The study answers three questions, in order: *can the line hit its throughput ta
 *how slow may the rework stations be and still hit it*, and *how little buffer capacity does
 it need*. All three were answered with `ExperimentManager` runs of five observations each.
 
-> Logistic Simulations · Summer Semester 2026 · Rhine-Waal University of Applied Sciences
+> Logistic Simulations · Summer Semester 2026 · Rhine-Waal University of Applied Sciences  
 > B.Sc. Mobility and Logistics · Group 5
 
 ---
@@ -233,7 +233,7 @@ reproduced in this README; the documents themselves are available on request.
 
 ## Authors
 
-**Group 5** — Tarek Hasan · B M Muntasir Fahim · Gazi Alvi Junaid
+**Group 5** — Tarek Hasan · B M Muntasir Fahim · Gazi Alvi Junaid  
 Rhine-Waal University of Applied Sciences, B.Sc. Mobility and Logistics.
 
 Academic coursework, published for reference and portfolio purposes. Please cite the authors if
